@@ -1,5 +1,7 @@
 package principal;
 
+import java.util.Random;
+
 public class Persona {
 	private	String nombre;
 	private	int edad;
@@ -22,17 +24,16 @@ public class Persona {
 		this.nombre = nombre;
 		this.edad = edad;
 		dni = generarDNI();
-		this.sexo = sexo;
+		comprobarSexo(sexo);
 		peso = 0;
 		altura = 0;
 	}
 	
 	public Persona(String nombre, int edad, char sexo, double peso, double altura) {
-		super();
 		this.nombre = nombre;
 		this.edad = edad;
 		dni = generarDNI();
-		this.sexo = sexo;
+		comprobarSexo(sexo);
 		this.peso = peso;
 		this.altura = altura;
 	}
@@ -64,7 +65,7 @@ public class Persona {
 	
 	private void comprobarSexo(char sexo) {
 		if(sexo != 'H' && sexo != 'M') {
-			sexo = 'H';
+			this.sexo = 'H';
 		}
 	}
 	
@@ -74,8 +75,9 @@ public class Persona {
 	
 	private String generarDNI() {
 		String numDNI = "";
+		Random numAleatorio = new Random();
 		for (int i = 0; i < 8; i++) {
-			int num = (int) (Math.random()*10+1);
+			int num = numAleatorio.nextInt(10);
 			numDNI = numDNI + Integer.toString(num);
 		}
 		String[] vLetra = {"T","R","W","A","G","M","Y","F","P","D","X","B","N","J","Z","S","Q","V","H","L","C","K","E"};
@@ -85,19 +87,34 @@ public class Persona {
 		return dni;
 	}
 	
-	public void setNombre() {
+	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public void setEdad() {
+	public void setEdad(int edad) {
 		this.edad = edad;
 	}
-	public void setSexo(){
+	public void setSexo(char sexo){
 		this.sexo = sexo;
 	}
-	public void setPeso() {
+	public void setPeso(double peso) {
 		this.peso = peso;
 	}
-	public void setAltura() {
+	public void setAltura(double altura) {
 		this.altura = altura;
+	}
+	public String getNombre() {
+		return this.nombre;
+	}
+	public int getEdad() {
+		return this.edad;
+	}
+	public char getSexo(){
+		return this.sexo;
+	}
+	public double getPeso() {
+		return this.peso;
+	}
+	public double getAltura() {
+		return this.altura;
 	}
 }
