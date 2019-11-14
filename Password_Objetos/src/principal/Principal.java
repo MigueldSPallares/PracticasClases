@@ -9,6 +9,7 @@ public class Principal {
 		int tam;
 		
 		Password p = new Password();
+		
 		System.out.println(p.esFuerte("ASDcvbn123456"));
 		
 		System.out.println("Dime el tamaño del vector");

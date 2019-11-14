@@ -18,18 +18,22 @@ public class Password {
 		int Mayusculas = 0;
 		int Minusculas = 0;
 		int Numeros = 0;
+		int valor;
 		for (int i = 0; i<contraseña.length(); i++) {
-			if(contraseña.substring(i, i+1).equalsIgnoreCase(contraseña.substring(i, i+1).toUpperCase())) {
-				Mayusculas = Mayusculas + 1;
+			valor = contraseña.charAt(i);
+			if(valor>=48 && valor<=57) {
+				Numeros = Numeros + 1;
 			}else {
-				if(contraseña.substring(i, i+1).equalsIgnoreCase(contraseña.substring(i, i+1).toLowerCase())){
-					Minusculas = Minusculas + 1;
+				if(valor>=65 && valor<=90){
+					Mayusculas = Mayusculas + 1;
 				}else {
-					Numeros = Numeros + 1;
+					if(valor>=97 && valor<=122) {
+						Minusculas = Minusculas + 1;
+					}
 				}
 			}
 		}
-		if(Mayusculas>=2 && Minusculas>=1 && Numeros>=5) {
+		if(Mayusculas>2 && Minusculas>1 && Numeros>5) {
 			return true;
 		}else {
 			return false;
