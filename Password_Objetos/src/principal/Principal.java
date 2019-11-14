@@ -10,8 +10,6 @@ public class Principal {
 		
 		Password p = new Password();
 		
-		System.out.println(p.esFuerte("ASDcvbn123456"));
-		
 		System.out.println("Dime el tamaño del vector");
 		tam = leer.nextInt();
 		Password[] password = new Password[tam];

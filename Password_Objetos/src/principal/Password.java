@@ -39,32 +39,6 @@ public class Password {
 			return false;
 		}
 	}
-	
-	public boolean esFuerte(String contraseña) {
-		int Mayusculas = 0;
-		int Minusculas = 0;
-		int Numeros = 0;
-		int valor;
-		for (int i = 0; i<contraseña.length(); i++) {
-			valor = (int) (contraseña.charAt(i));
-			if(valor>=48 && valor<=57) {
-				Numeros = Numeros + 1;
-			}else {
-				if(valor>=65 && valor<=90) {
-					Mayusculas = Mayusculas + 1;
-				}else {
-					if(valor>=97 && valor<=122) {
-						Minusculas = Minusculas + 1;
-					}
-				}
-			}
-		}
-		if(Mayusculas>=2 && Minusculas>=1 && Numeros>=5) {
-			return true;
-		}else {
-			return false;
-		}
-	}
 	public void generarPassword(int longitud) {
 		Random r = new Random();
 		int num;
@@ -77,11 +51,11 @@ public class Password {
 				
 				break;
 			case 1:
-				contraseña = contraseña + (char) (r.nextInt(25) + 65);
+				contraseña = contraseña + (char) (r.nextInt(26) + 65);
 				
 				break;
 			case 2:
-				contraseña = contraseña + (char) (r.nextInt(25) + 97);
+				contraseña = contraseña + (char) (r.nextInt(26) + 97);
 				
 				break;
 				}
