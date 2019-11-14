@@ -39,6 +39,17 @@ public class Password {
 			return false;
 		}
 	}
+	
+	public String toString() {
+		String fuerte  = "";
+		if (this.esFuerte()) {
+			fuerte = "fuerte";
+		}else {
+			fuerte = "debil";
+		}
+		return "Contraseña = " + contraseña + " es " + fuerte;
+	}
+	
 	public void generarPassword(int longitud) {
 		Random r = new Random();
 		int num;

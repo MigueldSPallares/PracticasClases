@@ -8,6 +8,12 @@ public class Principal {
 		Scanner leer = new Scanner(System.in);
 		int tam;
 		
+		Usuario usu = new Usuario("Juan");
+		usu.añadirContraseña();
+		usu.añadirContraseña();
+		usu.añadirContraseña();
+		usu.verTodasContraseñas();
+		
 		Password p = new Password();
 		
 		System.out.println("Dime el tamaño del vector");
