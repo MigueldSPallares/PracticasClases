@@ -13,13 +13,15 @@ public class Principal {
 		System.out.println("Dime el tamaño del vector");
 		tam = leer.nextInt();
 		Password[] password = new Password[tam];
+		boolean[] vSeguridad = new boolean[tam];
 		System.out.println("Dime la longitud de las contraseñas");
 		int longitud;
 		leer = new Scanner(System.in);
 		longitud = leer.nextInt();
 		for(int i=0; i<tam; i++) {
 			password[i] =  new Password(longitud);
+			vSeguridad[i] = password[i].esFuerte();
+			System.out.println(password[i].getContraseña() + " - " + vSeguridad[i]);
 		}
-		
 	}
 }
